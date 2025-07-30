@@ -6,7 +6,7 @@
 PKG_NAME="RTL8852BU"
 PKG_VERSION="03f1c0fed096db2ea0d3e992acd59feb37f30dfe"
 PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/morrownr/rtl8852bu"
+PKG_SITE="https://github.com/morrownr/rtl8852bu-20240418"
 PKG_URL="${PKG_SITE}.git"
 PKG_LONGDESC="Realtek 8852BU driver"
 PKG_TOOLCHAIN="make"
