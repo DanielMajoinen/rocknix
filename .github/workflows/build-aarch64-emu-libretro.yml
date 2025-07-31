@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-aarch64-emu-libretro:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     permissions:
       actions: write
       contents: read

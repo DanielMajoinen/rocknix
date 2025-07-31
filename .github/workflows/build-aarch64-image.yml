@@ -23,7 +23,7 @@ on:
 
 jobs:
   build-aarch64-image:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     env:
       JAVA_HOME: /usr
       PROJECT: ${{ inputs.PROJECT }}

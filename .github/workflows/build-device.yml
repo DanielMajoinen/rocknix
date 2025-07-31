@@ -48,7 +48,6 @@ on:
 
 jobs:
   build-arm:
-    runs-on: self-hosted
     uses: ./.github/workflows/build-arm.yml
     secrets: inherit
     with:
@@ -57,7 +56,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-toolchain:
-    runs-on: self-hosted
     uses: ./.github/workflows/build-aarch64-toolchain.yml
     secrets: inherit
     with:
@@ -66,7 +64,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64:
-    runs-on: self-hosted
     needs: build-aarch64-toolchain
     uses: ./.github/workflows/build-aarch64.yml
     secrets: inherit
@@ -76,7 +73,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-mame-lr:
-    runs-on: self-hosted
     needs: build-aarch64-toolchain
     uses: ./.github/workflows/build-aarch64-mame-lr.yml
     secrets: inherit
@@ -86,7 +82,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-qt6:
-    runs-on: self-hosted
     needs: build-aarch64
     uses: ./.github/workflows/build-aarch64-qt6.yml
     secrets: inherit
@@ -96,7 +91,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-emu-libretro:
-    runs-on: self-hosted
     needs:
       - build-aarch64
       - build-aarch64-mame-lr
@@ -110,7 +104,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-emu-standalone:
-    runs-on: self-hosted
     needs:
       - build-aarch64
       - build-aarch64-qt6
@@ -123,7 +116,6 @@ jobs:
       OWNER_LC: ${{ inputs.OWNER_LC }}
 
   build-aarch64-image:
-    runs-on: self-hosted
     needs:
       - build-aarch64-emu-libretro
       - build-aarch64-emu-standalone
