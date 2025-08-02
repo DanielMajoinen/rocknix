@@ -1,12 +1,9 @@
 name: Build Docker Image
 
 on:
+  workflow_dispatch:
   workflow_call:
-    inputs:
-      OWNER_LC:
-        description: "repo owner name"
-        type: string
-        required: true
+
 jobs:
   build-docker-image:
     runs-on: ubuntu-24.04
@@ -27,4 +24,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/${{ inputs.OWNER_LC }}/rocknix-build:latest
+          tags: ghcr.io/danielmajoinen/rocknix-build:latest
